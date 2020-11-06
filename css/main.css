@@ -97,49 +97,72 @@ textarea {
 
 
 html {
-  background-color: #264653;
+  background-color: #e9c46a;
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: 'Karla', sans-serif;
-  padding: 2em;
-  font-size: 1em;
-  height: 100%;
-}
+    font-family: 'Karla', sans-serif;
+    padding: 0em 2em;
+    font-size: 1.25em;
+    color: #264653;
+    display: flex;
+    justify-content: center;
+  }
 
-.wrapper {
+.flex-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 5%;
+}
+header,
+footer {
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
+    background-color: #e9c46a;
+    height: 60px;
+    width: 100%;
 }
 
-.div-1, .div-2, .div-3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  line-height: 1.5em;
-  font-size: 1.3em;
-  background-color: #264653;
-  height: auto;
-/* width: 30%; */
-  text-align: center;
+header h1 {
+    font-family: 'BioRhyme', serif;
+    font-size: 2.5em;
+    color: #264653;
 }
 
+main {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 3px solid #e76f51;
+}
 
-.attribution {
+main p {
+    font-size: 1.25em;
+}
+
+.flex-items {
     display: flex;
     justify-content: center;
-    font-family: 'BioRhyme', serif;
-    font-size: 2em;
+    align-items: center;
+    color: #264653;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    background-color: #e9c46a;
+    border-bottom: 3px solid #2a9d8f;
+    /* width: 30%; */
+    text-align: left;
 }
 
-a {
-    color: #e76f51;
-    text-decoration: none;
+footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 3px solid #e76f51;
+    font-size: .75em;
 }
 
 /* ==========================================================================
@@ -222,15 +245,30 @@ a {
    Modify as content requires.
    ========================================================================== */
 
+   @media (min-width: 480px) {
+    #div-3 {
+        border-bottom: none;
+    }
+   }
+
+@media all and (min-width: 768px) {
+    body {
+        padding: 1em;
+    }
+}
+
 @media all and (min-width: 1200px) {
-    .div-1, .div-2, .div-3 {
-        flex-basis: 30%
+    .flex-items {
+        flex-basis: 30%;
+        border-bottom: none;
     }
 
-    .div-1, .div-2 {
-        border-right: 1px solid #e9c46a;
-        padding-right: 30px;
+    #div-2 p {
+        border-left: 2px solid #2a9d8f;
+        border-right: 2px solid #2a9d8f;
+        padding: 0 40px;
     }
+}
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
